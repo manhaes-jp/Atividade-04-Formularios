@@ -19,3 +19,13 @@ form {
 .answer {
   margin-bottom: 10px;
 }
+
+.error {
+  margin-top: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+  margin-top: 40px;
+}

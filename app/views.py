@@ -104,7 +104,11 @@ def login_user(request):
       username = request.POST["username"],
       password = request.POST["password"]
     )
-    login(request, user)
+
+    if user != None:
+      login(request, user)
+    else:
+      return render(request, "login.html", context={"error_msg": "Usuário não existe"})
     if request.user.is_authenticated:
       return redirect("home")
   return render(request, "login.html")
@@ -112,3 +116,6 @@ def login_user(request):
 def logout_user(request):
   logout(request)
   return redirect("login")
+
+def reset_password(request):
+  

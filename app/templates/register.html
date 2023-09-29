@@ -14,15 +14,15 @@
   <form method="post">
     {% csrf_token %}
     <div>
-      <label class="question">Nome de Usuário:</label>
+      <label class="question">Criar um nome de usuário:</label>
       <input class="answer" type="text" name="username">
     </div>
     <div>
-      <label class="question">Senha:</label>
+      <label class="question">Criar uma senha:</label>
       <input class="answer" type="password" name="password" >
     </div>
-
     <input type="submit" value="Login">
+    <a href="/users/login/">Fazer login</a>
   </form>
 </body>
 </html>
