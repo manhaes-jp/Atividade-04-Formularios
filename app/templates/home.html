@@ -14,56 +14,69 @@
 </head>
 
 <body>
-  <div class="introduction">
-    <h1>Meu time de Futebol</h1>
-    <div class="image_center">
-      <img class="logo" src="{% static 'images/Botafogo.png'%}">
+  <header>
+    <div class="user">
+      <nav>
+        {% if request.user.is_authenticated %}
+          <h3>Bem-vindo, {{request.user.username}}</h3>
+          <h3><a href="/users/logout">Sair</a></h3>
+        {% endif %}
+      </nav>
     </div>
-    <h2>Botafogo de Futebol e Regatas</h2>
-    <p>Botafogo de Futebol e Regatas é uma agremiação poliesportiva brasileira, com sede no bairro homônimo ao clube, na cidade do Rio de Janeiro. <b>Nascido da fusão do <i>Club de Regatas Botafogo</i> (fundado para o remo em 1894) com o <i>Botafogo Football Club</i> (formado para o futebol em 1904), é um dos principais clubes do Brasil.</b></p>
-    <h4><a href="https://www.botafogo.com.br/" target="_blank">Clique aqui para saber mais</a></h4>
-  </div>
-  <div class="stadium">
-    <h3>Aonde o Botafogo joga?</h3>
-    <p>Desde 2007, manda seus jogos de futebol no <b>Estádio Nilton Santos</b>, antes chamado de <b>Engenhão</b>.</p>
-    <div class="image_center">
-      <img class="image_stadium" src="{% static 'images/NiltonSantos.webp'%}">
+  </header>
+  <main>
+    <div class="introduction">
+      <h1>Meu time de Futebol</h1>
+      <div class="image_center">
+        <img class="logo" src="{% static 'images/Botafogo.png'%}">
+      </div>
+      <h2>Botafogo de Futebol e Regatas</h2>
+      <p>Botafogo de Futebol e Regatas é uma agremiação poliesportiva brasileira, com sede no bairro homônimo ao clube, na cidade do Rio de Janeiro. <b>Nascido da fusão do <i>Club de Regatas Botafogo</i> (fundado para o remo em 1894) com o <i>Botafogo Football Club</i> (formado para o futebol em 1904), é um dos principais clubes do Brasil.</b></p>
+      <h4><a href="https://www.botafogo.com.br/" target="_blank">Clique aqui para saber mais</a></h4>
     </div>
-  </div>
-  <div class="rivals">
-    <h3>Quem são seus rivais?</h3>
-    <p>Um dos clubes mais populares do Brasil, tem como seus principais rivais o <b>Flamengo</b>, o <b>Fluminense</b> e o <b>Vasco da Gama</b>.</p>
-  </div>
-  <div class="mascots">
-    <h3>Quais são seus mascotes?</h3>
-    <ul class="list_mascots">
-      <li>Biriba</li>
-      <li>Manequinho</li>
-      <li>Pato Donald</li>
-    </ul>
-  </div>
-  <div class="titles">
-    <h3>Quais são os principais títulos?</h3>
-    <ul class="list_titles">
-      <h4><a href="/titles_add">Dê sua opinião</a></h4>
-      {% for title in titles %}
-      <li>{{ title.name }}
-        <a href="/titles/update/{{ title.id }}">Deseja atualizar?</a>
-        <a href="/titles/delete/{{ title.id }}">Deseja remover?</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="idols">
-    <h3>Quais são os seus maiores idolos?</h3>
-    <ol class="list_idols">
-      <h4><a href="/idols_add">Dê sua opinião</a></h4>
-      {% for idol in idols %}
-      <li>{{ idol.name }}
-        <a href="/idols/update/{{ idol.id }}">Deseja atualizar?</a>
-        <a href="/idols/delete/{{ idol.id }}">Deseja remover?</a></li>
-      {% endfor %}
-    </ol>
-  </div>
+    <div class="stadium">
+      <h3>Aonde o Botafogo joga?</h3>
+      <p>Desde 2007, manda seus jogos de futebol no <b>Estádio Nilton Santos</b>, antes chamado de <b>Engenhão</b>.</p>
+      <div class="image_center">
+        <img class="image_stadium" src="{% static 'images/NiltonSantos.webp'%}">
+      </div>
+    </div>
+    <div class="rivals">
+      <h3>Quem são seus rivais?</h3>
+      <p>O <b>Botafogo</b> tem como seus principais rivais o <b>Flamengo</b>, o <b>Fluminense</b> e o <b>Vasco da Gama</b>.</p>
+    </div>
+    <div class="mascots">
+      <h3>Quais são seus mascotes?</h3>
+      <ul class="list_mascots">
+        <li>Biriba</li>
+        <li>Manequinho</li>
+        <li>Pato Donald</li>
+      </ul>
+    </div>
+    <div class="titles">
+      <h3>Quais são os principais títulos?</h3>
+      <ul class="list_titles">
+        <h4><a href="/titles_add">Dê sua opinião</a></h4>
+        {% for title in titles %}
+        <li>{{ title.name }}
+          <a href="/titles/update/{{ title.id }}">Deseja atualizar?</a>
+          <a href="/titles/delete/{{ title.id }}">Deseja remover?</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="idols">
+      <h3>Quais são os seus maiores idolos?</h3>
+      <ol class="list_idols">
+        <h4><a href="/idols_add">Dê sua opinião</a></h4>
+        {% for idol in idols %}
+        <li>{{ idol.name }}
+          <a href="/idols/update/{{ idol.id }}">Deseja atualizar?</a>
+          <a href="/idols/delete/{{ idol.id }}">Deseja remover?</a></li>
+        {% endfor %}
+      </ol>
+    </div>
+  </main>
+  <footer></footer>
 </body>
 
 </html>

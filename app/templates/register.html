@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registre</title>
+  <link href="{% static 'styleLogin.css' %}" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Roboto', sans-serif;">
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <label class="question">Nome de Usuário:</label>
+      <input class="answer" type="text" name="username">
+    </div>
+    <div>
+      <label class="question">Senha:</label>
+      <input class="answer" type="password" name="password" >
+    </div>
+
+    <input type="submit" value="Login">
+  </form>
+</body>
+</html>

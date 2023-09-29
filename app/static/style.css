@@ -8,6 +8,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+header {
+  text-align: center;
+}
+
 a {
   color: grey;
   text-decoration: none;
