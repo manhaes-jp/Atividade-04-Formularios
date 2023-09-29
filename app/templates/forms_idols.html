@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" style="
+  background-color: black; 
+  color: white;
+  ">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'styleListadd.css' %}" rel="stylesheet" type="text/css" />
+  <title>Principais Títulos</title>
+</head>
+<body>
+  <div>
+    <h1>{{ action }} jogador</h1>
+  </div>
+  <div>
+    <form method="POST">
+    {% csrf_
+    <div>
+      <label class="question">Jogador:</label>
+      <input class="answer" name="name" value="{{ idols.name }}">
+      <label class="question">Jogos:</label>
+      <input class="answer" type="number" name="games" value="{{ idols.games }}">
+      <label class="question">Posição:</label>
+      <input class="answer" name="position" value="{{ idols.position }}">
+      <label class="question">Idade:</label>
+      <input class="answer" name="age" value="{{ idols.age }}">
+    </div>    
+    <div class="register">
+      <input type="submit" value="Registrar">
+    </div>
+    </form>
+  </div>
+</body>
+  
+</html>

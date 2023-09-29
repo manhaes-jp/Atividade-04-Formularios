@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'styleListremove.css' %}" rel="stylesheet" type="text/css" />
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>Você tem certeza que deseja remover as informações de "{{ idols.name }}"?</h1>
+  </div>
+  <div class="answer">
+    <form method="post">
+    {% csrf_
+    <input type="submit" name="confirmar" value="Sim">
+    <input type="submit" value="Não">
+  </div>
+</form>
+</body>
+</html>
